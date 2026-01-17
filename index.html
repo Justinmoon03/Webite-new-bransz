@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bransz SMP</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background:radial-gradient(circle at top,#3b2a6f,#060b2a);
+  color:#fff;
+}
+.container{
+  max-width:480px;
+  margin:auto;
+  padding:18px;
+}
+.top-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 0 18px;
+}
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.logo{
+  width:52px;
+  height:52px;
+  border-radius:16px;
+  box-shadow:0 0 25px rgba(96,165,250,.6);
+}
+.site-name{
+  font-size:26px;
+  font-weight:800;
+}
+.status{
+  margin:22px auto 30px;
+  padding:10px 22px;
+  border-radius:999px;
+  background:#1e293b;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  width:fit-content;
+}
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#22c55e;
+  animation:pulse 1.6s infinite;
+}
+@keyframes pulse{
+  0%{ box-shadow:0 0 0 0 rgba(34,197,94,.7); }
+  70%{ box-shadow:0 0 0 10px rgba(34,197,94,0); }
+  100%{ box-shadow:0 0 0 0 rgba(34,197,94,0); }
+}
+.status.offline .dot{ background:#ef4444; }
+
+h1{ text-align:center;font-size:36px;margin:10px 0 6px; }
+.sub{ text-align:center;font-size:18px;color:#60a5fa; }
+.desc{ text-align:center;opacity:.85;margin:14px 0 24px;line-height:1.6; }
+
+.server-info{ display:grid;gap:14px;margin-bottom:30px; }
+.info-item{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 20px;border-radius:22px;background:#11183c;
+}
+.info-text span{
+  font-size:12px;color:#7dd3fc;letter-spacing:2px;
+}
+.copy{ margin-left:auto;cursor:pointer; }
+
+.btn-main{
+  display:inline-block;
+  padding:14px 30px;
+  border-radius:999px;
+  font-size:16px;
+  font-weight:700;
+  background:linear-gradient(90deg,#38bdf8,#8b5cf6);
+  color:#000;
+  text-decoration:none;
+}
+
+.btn-group{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin:26px 0 40px;
+}
+.btn-small{
+  padding:14px;
+  border-radius:18px;
+  background:#11183c;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  font-weight:500;
+}
+
+.features-header{
+  text-align:center;
+  margin-bottom:24px;
+}
+.features-header span{
+  font-size:12px;
+  letter-spacing:3px;
+  color:#7dd3fc;
+}
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+.feature-item{
+  padding:20px;
+  border-radius:22px;
+  background:#0f163d;
+  font-weight:500;
+}
+
+.fade-up{
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s ease;
+}
+.fade-up.show{
+  opacity:1;
+  transform:none;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header class="top-header fade-up">
+  <div class="logo-wrap">
+    <img src="logo.png" class="logo">
+    <div class="site-name">Bransz SMP</div>
+  </div>
+</header>
+
+<div class="status fade-up" id="statusBox">
+  <div class="dot"></div>
+  <span id="player">Loading...</span>
+</div>
+
+<h1 class="fade-up">Bransz SMP</h1>
+<div class="sub fade-up">Server Minecraft Crossplay</div>
+
+<p class="desc fade-up">
+Bransz SMP adalah server Minecraft Economy Survival dengan komunitas ramah dan fitur lengkap.
+</p>
+
+<div class="server-info fade-up">
+  <div class="info-item">
+    🌐
+    <div class="info-text">
+      <span>SERVER IP</span>
+      <strong id="ip">branzoffcial.my.id</strong>
+    </div>
+    <div class="copy" onclick="copyIP()">📋</div>
+  </div>
+
+  <div class="info-item">
+    📦
+    <div class="info-text">
+      <span>VERSION</span>
+      <strong>Java 1.17–1.21+ | Bedrock 1.21+</strong>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center" class="fade-up">
+  <a class="btn-main"
+     href="minecraft://?addExternalServer=Bransz SMP|branzoffcial.my.id:19132">
+    Join Server
+  </a>
+</div>
+
+<div class="btn-group fade-up">
+  <a class="btn-small" href="Store.html">Store</a>
+  <a class="btn-small" href="https://chat.whatsapp.com/CkU1aHJlMR91iCIWk5CDk0" target="_blank">Komunitas</a>
+  <a class="btn-small" href="https://discord.gg/jKwdz8b5ym" target="_blank">Discord</a>
+</div>
+
+<section class="fade-up">
+  <div class="features-header">
+    <span>SERVER FEATURES</span>
+    <h2>Fitur Unggulan</h2>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-item">🛡️ Claim Land</div>
+    <div class="feature-item">💰 Economy</div>
+    <div class="feature-item">🔥 Spawner</div>
+    <div class="feature-item">🎤 Voice Chat</div>
+    <div class="feature-item">⚔️ PvP</div>
+    <div class="feature-item">🤝 Java & Bedrock</div>
+    <div class="feature-item">🎁 Gacha</div>
+    <div class="feature-item">🪙 Coin Flip</div>
+  </div>
+</section>
+
+</div>
+
+<script>
+function copyIP(){
+  const ip = document.getElementById("ip").innerText;
+  navigator.clipboard.writeText(ip).then(()=>{
+    alert("IP server disalin!");
+  });
+}
+
+/* FADE SCROLL */
+const els=document.querySelectorAll('.fade-up');
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>x.isIntersecting && x.target.classList.add('show'));
+},{threshold:.2});
+els.forEach(el=>obs.observe(el));
+
+/* STATUS SERVER JAVA */
+const STATUS_URL = "https://api.mcstatus.io/v2/status/java/branzoffcial.my.id";
+const statusBox = document.getElementById("statusBox");
+const playerText = document.getElementById("player");
+
+async function updateStatus(){
+  try{
+    const res = await fetch(STATUS_URL);
+    const data = await res.json();
+    statusBox.classList.remove("offline");
+    playerText.innerText = `🟢 Online • ${data.players.online} Pemain`;
+  }catch{
+    statusBox.classList.add("offline");
+    playerText.innerText = "🔴 Server Offline";
+  }
+}
+
+updateStatus();
+setInterval(updateStatus,30000);
+</script>
+
+</body>
+</html>
