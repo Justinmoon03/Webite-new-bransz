@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Bransz SMP</title>
+
+<!-- FAVICON TAB BROWSER -->
+<link rel="icon" type="image/png" href="logo2.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -222,14 +226,12 @@ function copyIP(){
   });
 }
 
-/* FADE SCROLL */
 const els=document.querySelectorAll('.fade-up');
 const obs=new IntersectionObserver(e=>{
   e.forEach(x=>x.isIntersecting && x.target.classList.add('show'));
 },{threshold:.2});
 els.forEach(el=>obs.observe(el));
 
-/* STATUS SERVER JAVA */
 const STATUS_URL = "https://api.mcstatus.io/v2/status/java/branzoffcial.my.id";
 const statusBox = document.getElementById("statusBox");
 const playerText = document.getElementById("player");
